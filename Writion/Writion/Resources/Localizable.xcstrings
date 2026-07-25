@@ -2,11 +2,72 @@
   "sourceLanguage" : "en",
   "strings" : {
     "test" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختبار"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "test"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מבחן"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ทดสอบ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "test"
+          }
+        }
+      }
     },
     "Writion" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writion"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writion"
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writion"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writion"
+          }
+        },
+        "th" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Writion"
@@ -22,10 +83,34 @@
     },
     "Writion 创作的主要功能" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الميزات الرئيسية لـ Writion"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hauptfunktionen von Writion"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Main Features of Writion"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התכונות העיקריות של Writion"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คุณสมบัติหลักของ Writion"
           }
         },
         "zh-Hans" : {
@@ -38,10 +123,34 @@
     },
     "你可以轻点进一步了解，查看“Writion 创作”如何使用你的数据，或者继续以开始使用。" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر على \"معرفة المزيد\" لتفهم كيف يستخدم Writion بياناتك، أو تابع للبدء."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf „Mehr erfahren“, um zu erfahren, wie „Writion“ deine Daten verwendet, oder fahre fort, um zu beginnen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tap Learn More to understand how Writion uses your data, or continue to get started."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הקש \"למידע נוסף\" כדי להבין כיצד Writion משתמש בנתונים שלך, או המשך כדי להתחיל."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แตะ \"เรียนรู้เพิ่มเติม\" เพื่อดูว่า Writion ใช้ข้อมูลของคุณอย่างไร หรือดำเนินการต่อเพื่อเริ่มต้น"
           }
         },
         "zh-Hans" : {
@@ -53,14 +162,75 @@
       }
     },
     "免费的，使用 MIT 协议开源的，原生 Swift 语言编写的，轻量化创作 App。NovaWise Syndicate 出品。" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تطبيق كتابة خفيف، مجاني، مفتوح المصدر بموجب MIT، مكتوب بلغة Swift الأصلية. من إنتاج NovaWise Syndicate."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kostenlos, MIT-lizenziert, in nativem Swift geschrieben – eine leichte Schreib-App. Hergestellt von NovaWise Syndicate."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Free, open-source under MIT, written in native Swift — a lightweight writing app. Brought to you by NovaWise Syndicate."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אפליקציית כתיבה קלה, חינמית, בקוד פתוח תחת רישיון MIT, כתובה ב-Swift מקורי. מבית NovaWise Syndicate."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แอปเขียนบทความน้ำหนักเบา ฟรี โอเพนซอร์สภายใต้สัญญา MIT เขียนด้วย Swift ดั้งเดิม โดย NovaWise Syndicate"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "免费的，使用 MIT 协议开源的，原生 Swift 语言编写的，轻量化创作 App。NovaWise Syndicate 出品。"
+          }
+        }
+      }
     },
     "关闭 Writion 创作" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إغلاق Writion"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writion schließen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Close Writion"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "סגור את Writion"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ปิด Writion"
           }
         },
         "zh-Hans" : {
@@ -72,52 +242,355 @@
       }
     },
     "友好界面" : {
-
-    },
-    "完整功能列表  ›" : {
-
-    },
-    "快速分享" : {
-
-    },
-    "快速导出为 *.epub 或 *.md 供他人导入使用。" : {
-
-    },
-    "拒绝繁琐，使用 Writion 创作让你感到编辑 Markdown 和使用 Word 或 Pages 一般容易。" : {
-      "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واجهة سهلة الاستخدام"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzerfreundliche Oberfläche"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Skip the complexity, editing Markdown in Writion feels as easy as using Word or Pages."
+            "value" : "User-Friendly Interface"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ממשק ידידותי למשתמש"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อินเทอร์เฟซที่เป็นมิตร"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "拒绝繁琐，使用 Writion 创作让你感到编辑 Markdown 和使用 Word 或 Pages 一般容易。"
+            "value" : "友好界面"
+          }
+        }
+      }
+    },
+    "完整功能列表  ›" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قائمة الميزات الكاملة  ›"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vollständige Funktionsliste  ›"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full Feature List  ›"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "רשימת התכונות המלאה  ›"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "รายการฟีเจอร์ทั้งหมด  ›"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完整功能列表  ›"
+          }
+        }
+      }
+    },
+    "快速分享" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مشاركة سريعة"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schnelles Teilen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick Sharing"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שיתוף מהיר"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แชร์ด่วน"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快速分享"
+          }
+        }
+      }
+    },
+    "快速导出为 *.epub 或 *.md 供他人导入使用。" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تصدير سريع بصيغة *.epub أو *.md ليتمكن الآخرون من استيرادها."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schnell als *.epub oder *.md exportieren, damit andere sie importieren können."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quickly export as *.epub or *.md for others to import."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ייצא במהירות כ-*.epub או *.md לשימוש על ידי אחרים."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ส่งออกอย่างรวดเร็วเป็น *.epub หรือ *.md ให้ผู้อื่นนำเข้าไปใช้"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快速导出为 *.epub 或 *.md 供他人导入使用。"
           }
         }
       }
     },
     "拒绝繁琐，使用 Writion 创作让你感到编辑 Markdown 和使用 Word 或 Pages 文稿一般容易。" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تجاوز التعقيد، تحرير Markdown في Writion سهل مثل استخدام Word أو Pages."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Komplikationen – mit Writion fühlt sich das Bearbeiten von Markdown so einfach an wie Word oder Pages."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip the complexity, editing Markdown in Writion feels as easy as using Word or Pages.\n"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "דלג על המורכבות, עריכת Markdown ב-Writion מרגישה קלה כמו שימוש ב-Word או Pages."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ข้ามความซับซ้อน การแก้ไข Markdown ใน Writion ง่ายเหมือนใช้ Word หรือ Pages"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拒绝繁琐，使用 Writion 创作让你感到编辑 Markdown 和使用 Word 或 Pages 文稿一般容易。"
+          }
+        }
+      }
     },
     "接受并继续" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قبول والمتابعة"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akzeptieren und Fortfahren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accept and Continue"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "קבל והמשך"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยอมรับและดำเนินการต่อ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接受并继续"
+          }
+        }
+      }
     },
     "文档加密" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تشفير المستندات"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokumentenverschlüsselung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Document Encryption"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הצפנת מסמכים"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การเข้ารหัสเอกสาร"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文档加密"
+          }
+        }
+      }
     },
     "文档同步上传 iCloud，你的创作稳定有保障。" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتم مزامنة المستندات مع iCloud، مما يحافظ على أمان عملك."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokumente werden mit iCloud synchronisiert – deine Arbeit ist sicher."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Documents sync to iCloud, keeping your work safe and secure."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מסמכים מסתנכים ל-iCloud, שומרים על העבודה שלך בטוחה ומוגנת."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เอกสารซิงค์ไปยัง iCloud ช่วยให้งานของคุณปลอดภัย"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文档同步上传 iCloud，你的创作稳定有保障。"
+          }
+        }
+      }
     },
     "欢迎使用 Writion 创作" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مرحبًا بك في Writion"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willkommen bei Writion"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Welcome to Writion"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ברוכים הבאים ל-Writion"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยินดีต้อนรับสู่ Writion"
           }
         },
         "zh-Hans" : {
@@ -129,34 +602,115 @@
       }
     },
     "继续" : {
-
-    },
-    "轻点“继续”即表示你同意《[Writion 创作软件许可协议](https://blog.nws.us.kg)》的条款。" : {
-      "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متابعة"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortfahren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "המשך"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ดำเนินการต่อ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "继续"
+          }
+        }
+      }
+    },
+    "轻点“继续”即表示你同意《[Writion 创作软件许可协议](https://raw.githubusercontent.com/nhx100218/Writion-iOS/main/LICENSE)》的条款。" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بالنقر على \"متابعة\"، فإنك توافق على شروط [اتفاقية ترخيص برنامج Writion](https://raw.githubusercontent.com/nhx100218/Writion-iOS/main/LICENSE)."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit Tippen auf „Fortfahren“ stimmst du den Bedingungen der [Writion-Softwarelizenzvereinbarung](https://raw.githubusercontent.com/nhx100218/Writion-iOS/main/LICENSE) zu."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "By tapping “Continue”, you agree to the terms of the [Writion Software License Agreement](https://blog.nws.us.kg)."
           }
         },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "בהקשה על \"המשך\", אתה מסכים לתנאי [הסכם רישיון התוכנה של Writion](https://raw.githubusercontent.com/nhx100218/Writion-iOS/main/LICENSE)."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การแตะ \"ดำเนินการต่อ\" แสดงว่าคุณยอมรับข้อกำหนดใน[ข้อตกลงสิทธิ์การใช้งานซอฟต์แวร์ Writion](https://raw.githubusercontent.com/nhx100218/Writion-iOS/main/LICENSE)"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "轻点“继续”即表示你同意《[Writion 创作软件许可协议](https://blog.nws.us.kg)》的条款。"
+            "value" : "轻点“继续”即表示你同意《[Writion 创作软件许可协议](https://raw.githubusercontent.com/nhx100218/Writion-iOS/main/LICENSE)》的条款。"
           }
         }
       }
     },
-    "轻点“继续”即表示你同意《[Writion 创作软件许可协议](https://raw.githubusercontent.com/nhx100218/Writion-iOS/main/LICENSE)》的条款。" : {
-
-    },
     "输入一些内容..." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل بعض النص..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib etwas ein..."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enter some text..."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הכנס טקסט..."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ป้อนข้อความ..."
           }
         },
         "zh-Hans" : {
@@ -168,13 +722,124 @@
       }
     },
     "进一步了解..." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معرفة المزيد..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr erfahren..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Learn More..."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "למידע נוסף..."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เรียนรู้เพิ่มเติม..."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "进一步了解"
+          }
+        }
+      }
     },
     "通过iCloud同步" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مزامنة iCloud"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud-Synchronisierung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Sync"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "סנכרון iCloud"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ซิงค์ iCloud"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过iCloud同步"
+          }
+        }
+      }
     },
     "通过端对端加密保障隐私安全。" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التشفير من طرف إلى طرف يحمي خصوصيتك."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ende-zu-Ende-Verschlüsselung schützt deine Privatsphäre."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End-to-end encryption keeps your privacy protected."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הצפנה מקצה לקצה שומרת על פרטיותך מוגנת."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การเข้ารหัสแบบ end-to-end ช่วยปกป้องความเป็นส่วนตัวของคุณ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过端对端加密保障隐私安全。"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"
