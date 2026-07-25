@@ -1,0 +1,147 @@
+name: Build Writion IPA
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  build_unsigned_ipa:
+    runs-on: macos-26
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          lfs: true   # 必须：确保 LFS 文件被正确拉取
+
+      - name: Show Xcode Version
+        run: xcodebuild -version
+
+      - name: Parse Swift sources (syntax check)
+        run: |
+          set -euo pipefail
+          find Writion/Writion -name '*.swift' -print0 | xargs -0 xcrun swiftc -frontend -parse
+
+      - name: Build iOS app (unsigned)
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project Writion/Writion.xcodeproj \
+            -scheme Writion \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: Package unsigned IPA
+        run: |
+          set -euo pipefail
+          # 获取与构建时相同的 BUILT_PRODUCTS_DIR
+          DERIVED_DATA=$(xcodebuild \
+            -project Writion/Writion.xcodeproj \
+            -scheme Writion \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -showBuildSettings \
+            | grep "BUILT_PRODUCTS_DIR" \
+            | head -1 \
+            | sed 's/.*= //')
+          APP_PATH="$DERIVED_DATA/Writion.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "❌ .app not found at $APP_PATH"
+            exit 1
+          fi
+          mkdir -p Payload
+          cp -R "$APP_PATH" Payload/
+          zip -qry Writion.ipa Payload
+          echo "✅ IPA created: Writion.ipa"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: Writion-ipa
+          path: Writion.ipa
+
+      - name: Resolve previous-week successful run
+        id: prev_run
+        if: github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const now = new Date();
+            const start = new Date(now);
+            start.setUTCDate(start.getUTCDate() - 14);
+            const end = new Date(now);
+            end.setUTCDate(end.getUTCDate() - 7);
+
+            const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'build.yml',
+              status: 'completed',
+              per_page: 100
+            });
+
+            const candidates = runs
+              .filter(r => r.conclusion === 'success')
+              .filter(r => {
+                const created = new Date(r.created_at);
+                return created >= start && created < end;
+              })
+              .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+            const prev = candidates[0];
+            if (!prev) {
+              core.setOutput('summary', '未检测到上一周成功运行记录。');
+              core.setOutput('run_url', '');
+            } else {
+              core.setOutput('summary', `上一周最后一次成功运行：#${prev.run_number}`);
+              core.setOutput('run_url', prev.html_url);
+            }
+
+      - name: Build release metadata
+        id: release_meta
+        if: github.event_name == 'schedule'
+        run: |
+          set -euo pipefail
+          TAG="weekly-$(date -u +%G-W%V)"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+          BODY=$(cat <<-END
+          ## Writion 每周构建
+
+          - 工作流运行: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+          - ${PREV_SUMMARY}
+          ${PREV_URL:+- 上周运行链接: ${PREV_URL}}
+
+          本 Release 附带 IPA，仅用于 CI 流程验证与测试分发准备。
+          END
+          )
+          echo "body<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$BODY" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+        env:
+          PREV_SUMMARY: ${{ steps.prev_run.outputs.summary }}
+          PREV_URL: ${{ steps.prev_run.outputs.run_url }}
+
+      - name: Publish weekly release
+        if: github.event_name == 'schedule'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_meta.outputs.tag }}
+          name: ${{ steps.release_meta.outputs.tag }}
+          body: ${{ steps.release_meta.outputs.body }}
+          files: Writion.ipa
+          draft: false
+          prerelease: false

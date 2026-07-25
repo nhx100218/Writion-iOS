@@ -1,0 +1,181 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "test" : {
+
+    },
+    "Writion" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writion"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writion"
+          }
+        }
+      }
+    },
+    "Writion 创作的主要功能" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main Features of Writion"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writion 创作的主要功能"
+          }
+        }
+      }
+    },
+    "你可以轻点进一步了解，查看“Writion 创作”如何使用你的数据，或者继续以开始使用。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap Learn More to understand how Writion uses your data, or continue to get started."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你可以轻点进一步了解，查看“Writion 创作”如何使用你的数据，或者继续以开始使用。"
+          }
+        }
+      }
+    },
+    "免费的，使用 MIT 协议开源的，原生 Swift 语言编写的，轻量化创作 App。NovaWise Syndicate 出品。" : {
+
+    },
+    "关闭 Writion 创作" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close Writion"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭 Writion 创作"
+          }
+        }
+      }
+    },
+    "友好界面" : {
+
+    },
+    "完整功能列表  ›" : {
+
+    },
+    "快速分享" : {
+
+    },
+    "快速导出为 *.epub 或 *.md 供他人导入使用。" : {
+
+    },
+    "拒绝繁琐，使用 Writion 创作让你感到编辑 Markdown 和使用 Word 或 Pages 一般容易。" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip the complexity, editing Markdown in Writion feels as easy as using Word or Pages."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拒绝繁琐，使用 Writion 创作让你感到编辑 Markdown 和使用 Word 或 Pages 一般容易。"
+          }
+        }
+      }
+    },
+    "拒绝繁琐，使用 Writion 创作让你感到编辑 Markdown 和使用 Word 或 Pages 文稿一般容易。" : {
+
+    },
+    "接受并继续" : {
+
+    },
+    "文档加密" : {
+
+    },
+    "文档同步上传 iCloud，你的创作稳定有保障。" : {
+
+    },
+    "欢迎使用 Writion 创作" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Writion"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欢迎使用 Writion 创作"
+          }
+        }
+      }
+    },
+    "继续" : {
+
+    },
+    "轻点“继续”即表示你同意《[Writion 创作软件许可协议](https://blog.nws.us.kg)》的条款。" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "By tapping “Continue”, you agree to the terms of the [Writion Software License Agreement](https://blog.nws.us.kg)."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻点“继续”即表示你同意《[Writion 创作软件许可协议](https://blog.nws.us.kg)》的条款。"
+          }
+        }
+      }
+    },
+    "轻点“继续”即表示你同意《[Writion 创作软件许可协议](https://raw.githubusercontent.com/nhx100218/Writion-iOS/main/LICENSE)》的条款。" : {
+
+    },
+    "输入一些内容..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter some text..."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "输入一些内容..."
+          }
+        }
+      }
+    },
+    "进一步了解..." : {
+
+    },
+    "通过iCloud同步" : {
+
+    },
+    "通过端对端加密保障隐私安全。" : {
+
+    }
+  },
+  "version" : "1.1"
+}
