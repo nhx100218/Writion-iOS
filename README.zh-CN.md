@@ -1,4 +1,4 @@
-# Writion iOS
+# Writion 创作
 
 <p align="center">
 
@@ -7,7 +7,7 @@
 </a>
 
 <a href="README.zh-CN.md">
-<img src="https://img.shields.io/badge/语言-中文-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-%E4%B8%AD%E6%96%87-red?style=for-the-badge">
 </a>
 
 </p>
@@ -19,7 +19,7 @@
 </a>
 
 <a href="https://github.com/nhx100218/Writion-iOS/releases">
-<img src="https://img.shields.io/github/downloads/nhx100218/Writion-iOS/total?label=Downloads&style=flat">
+<img src="https://img.shields.io/github/downloads/nhx100218/Writion-iOS/total?label=%E4%B8%8B%E8%BD%BD&style=flat">
 </a>
 
 <a href="https://github.com/nhx100218/Writion-iOS/releases/">
@@ -30,26 +30,73 @@
 <img src="https://img.shields.io/github/license/nhx100218/Writion-iOS?style=flat">
 </a>
 
-<img src="https://img.shields.io/github/last-commit/nhx100218/Writion-iOS?color=c78aff&label=Last%20Commit&style=flat">
+<img src="https://img.shields.io/github/last-commit/nhx100218/Writion-iOS?color=c78aff&label=%E6%9C%80%E8%BF%91%E6%8F%90%E4%BA%A4&style=flat">
 
 </p>
 
-Writion 是一个基于 Apple **Landmarks** 示例工程改造中的 Markdown 编辑器应用。
+## 🌟 核心亮点
 
-> ⚠️ 项目当前**尚未开发完成**。
+基于 SwiftUI 原生框架，为作者打造的文档型书籍写作 App。核心特性：
 
-## 项目状态
+- **文档型架构**: `DocumentGroup` + `FileDocument`，每本书独立管理为 `.md` 文件，本地存储。
+- **类 VSCode 侧边栏编辑器**: 左侧章节列表（删除 / 重命名 / 拖拽排序）+ 右侧 Markdown 正文编辑区，支持实时预览切换。
+- **多章节 & 间章**: "普通章节"与"间章"独立编号。章节列表支持批量选择删除。
+- **导入 & 导出**: 通过粘贴 Writion 格式 .md 文本导入；导出 `.md` 或发布为 `.epub` 电子书。
+- **完整汉化**: 75+ 条多语言字符串，涵盖 6 种语言（简体中文 / 英语 / 德语 / 阿拉伯语 / 希伯来语 / 泰语）。
+- **导航栏标题菜单**: 重命名书籍 / 修改作者 / 发布为 EPUB，集成于系统标题栏菜单。
+- **iPad 分栏视图**: `NavigationSplitView` 侧边栏适配 iPad；`NavigationStack` 适配 iPhone。
+- **深色模式自适应背景**: 浅色模式暖米黄纸质感渐变，深色模式深沉暖棕渐变。
 
-- 基础来源：Apple 示例项目 **Landmarks**。
-- 当前阶段：早期品牌与基础能力改造。
-- 开发状态：未完成，功能仍在持续迭代。
+> ⚠️ 说明：导入功能为实验性功能，可能导致书籍名丢失，请谨慎使用。导入后建议检查并修正书名。
 
-## 说明
 
-- 本仓库由 Landmarks 示例项目修改而来。
-- 当前处于积极开发中，后续会持续更新。
+## 🚀 快速上手指南
 
-## 致谢
+### 设备要求
 
-原始示例参考：
+| 类型 | 系统版本 | 设备 |
+|------|----------|------|
+| **最低配置** | iOS 26.0+ / macOS 26.0+ | iPhone / iPad / Apple Silicon Mac |
+
+### 从源码构建
+
+1. 克隆仓库
+2. 在 Xcode 中打开 `Writion/Writion.xcodeproj`
+3. 选择 **Writion** scheme
+4. 构建并运行（`⌘R`）
+
+
+## 📦 技术架构
+
+| 模块 | 技术方案 |
+|------|----------|
+| 应用入口 | `AppLauncher` → `WritionLicenseApp` / `WritionDocumentApp` |
+| 文档模型 | `FileDocument` 协议（`BookDocument`） |
+| 场景管理 | `DocumentGroup` + `DocumentGroupLaunchScene` |
+| 数据格式 | 自定义 Markdown `.md`（新版: `#Start#...#End#`，旧版: `###...###`）|
+| 章节 | `Chapter` 结构体（模式 / 编号 / 标题 / 内容） |
+| 侧边栏编辑器 | `NavigationSplitView`（iPad）/ `NavigationStack`（iPhone） |
+| EPUB 导出 | 内置 ZIP 写入器 + Markdown→HTML 转换器 |
+| 缩略图 | `UIDocumentProperties` UIKit 桥接 |
+| 多语言 | `Localizable.xcstrings`（6 语言，75+ 键值） |
+
+
+## 🙏 致谢
+
+本项目基于 Apple 官方示例工程及文档构建，特别感谢以下资源：
+
+- [Building a Document-Based App with SwiftUI](https://developer.apple.com/documentation/swiftui/building-a-document-based-app-with-swiftui)
 - [Landmarks: Building an app with Liquid Glass](https://developer.apple.com/documentation/swiftui/landmarks-building-an-app-with-liquid-glass)
+- [Building a Document-Based App Using SwiftData](https://developer.apple.com/documentation/swiftui/building-a-document-based-app-using-swiftdata)
+- [Toolbars — Apple Developer Documentation](https://developer.apple.com/documentation/swiftui/toolbars)
+- [Evolve your document launch experience (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10132/)
+
+
+## 📄 许可证
+
+本项目基于 [MIT 协议](LICENSE) 开源。
+
+
+## CI 构件
+
+GitHub Action 会导出未签名的 IPA 文件 `Writion.ipa`。
