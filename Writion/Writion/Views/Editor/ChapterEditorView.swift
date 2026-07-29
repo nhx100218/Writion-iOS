@@ -1,9 +1,6 @@
 /*
  Writion — 书籍创作 App
  单章节 Markdown 编辑器
-
- - 章节标题点击进入行内编辑，编辑时"完成"按钮替代编辑/预览按钮
- - 预览/编辑切换图标使用 square.and.pencil
 */
 
 import SwiftUI
@@ -16,51 +13,46 @@ struct ChapterEditorView: View {
     @State private var editedTitle = ""
     @FocusState private var isTitleFocused: Bool
 
-    private let editorMaxWidth: CGFloat = 800
-
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(modeAndNumberText(chapter))
-                        .font(.subheadline).foregroundStyle(.secondary)
+        VStack(spacing: 0) {
+            // 章节标题区
+            VStack(alignment: .leading, spacing: 4) {
+                Text(modeAndNumberText(chapter))
+                    .font(.subheadline).foregroundStyle(.secondary)
 
-                    if isEditingTitle {
-                        TextField("章节标题", text: $editedTitle)
-                            .font(.title).fontWeight(.bold)
-                            .focused($isTitleFocused)
-                            .onSubmit { commitTitleEdit() }
-                            .onAppear { isTitleFocused = true }
-                    } else {
-                        Button {
-                            editedTitle = chapter.title
-                            isEditingTitle = true
-                        } label: {
-                            HStack(spacing: 4) {
-                                Text(chapter.title).font(.title).fontWeight(.bold)
-                                Image(systemName: "pencil").font(.caption).foregroundStyle(.secondary)
-                            }
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
-                .padding(.bottom, 16)
-
-                Divider().padding(.bottom, 16)
-
-                if isPreviewing {
-                    markdownPreview
+                if isEditingTitle {
+                    TextField("章节标题", text: $editedTitle)
+                        .font(.title).fontWeight(.bold)
+                        .focused($isTitleFocused)
+                        .onSubmit { commitTitleEdit() }
+                        .onAppear { isTitleFocused = true }
                 } else {
-                    markdownEditor
+                    Button {
+                        editedTitle = chapter.title; isEditingTitle = true
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text(chapter.title).font(.title).fontWeight(.bold)
+                            Image(systemName: "pencil").font(.caption).foregroundStyle(.secondary)
+                        }
+                    }
+                    .buttonStyle(.plain)
                 }
             }
-            .padding(.horizontal, 20).padding(.vertical, 24)
-            .frame(maxWidth: editorMaxWidth, alignment: .leading)
+            .padding(.horizontal, 20)
+            .padding(.top, 24)
+            .padding(.bottom, 16)
+
+            Divider()
+
+            // 正文：编辑/预览
+            if isPreviewing {
+                markdownPreview
+            } else {
+                markdownEditor
+            }
         }
-        .background(.background)
+        .frame(maxWidth: 800, alignment: .leading)
         .toolbar {
-            // 编辑标题模式 → 仅显示"完成"勾号
-            // 非编辑模式 → 显示预览/编辑切换按钮（square.and.pencil）
             if isEditingTitle {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button { commitTitleEdit() } label: {
@@ -91,31 +83,39 @@ struct ChapterEditorView: View {
         return String(format: String(localized: "第%lld章"), chapter.number)
     }
 
+    // MARK: - Markdown 编辑（撑满剩余空间）
+
     private var markdownEditor: some View {
         TextEditor(text: $chapter.content)
-            .font(.body).textEditorStyle(.plain).scrollIndicators(.automatic)
-            .frame(minHeight: 300)
-            .overlay {
+            .font(.body)
+            .scrollContentBackground(.hidden)
+            .scrollIndicators(.automatic)
+            .overlay(alignment: .topLeading) {
                 if chapter.content.isEmpty {
                     Text("开始编写章节内容...")
                         .font(.body).foregroundStyle(.tertiary)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .padding(.top, 7).padding(.leading, 6).allowsHitTesting(false)
+                        .padding(.top, 8).padding(.leading, 6)
+                        .allowsHitTesting(false)
                 }
             }
+            .padding(.horizontal, 16)
     }
+
+    // MARK: - Markdown 预览
 
     @ViewBuilder
     private var markdownPreview: some View {
-        if chapter.content.isEmpty {
-            // 纯文字占位，无图标
-            Text("切换到编辑模式开始编写")
-                .foregroundStyle(.secondary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-        } else {
-            Text(.init(chapter.content))
-                .font(.body).textSelection(.enabled)
-                .frame(maxWidth: .infinity, alignment: .leading)
+        ScrollView {
+            if chapter.content.isEmpty {
+                Text("切换到编辑模式开始编写")
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 20).padding(.top, 16)
+            } else {
+                Text(.init(chapter.content))
+                    .font(.body).textSelection(.enabled)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20).padding(.vertical, 16)
+            }
         }
     }
 }

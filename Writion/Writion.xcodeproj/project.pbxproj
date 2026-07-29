@@ -117,6 +117,10 @@
 				he,
 				de,
 				th,
+				"zh-Hans",
+				"zh-Hant",
+				ja,
+				ko,
 			);
 			mainGroup = D82EA0EC2D5692FD00493877;
 			preferredProjectObjectVersion = 77;

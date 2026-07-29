@@ -111,7 +111,7 @@ struct BookDocument: FileDocument {
                     bodyLines.append(lines[i])
                     i += 1
                 }
-                let content = bodyLines.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
+                let content = bodyLines.joined(separator: "\n").trimmingSuffix(while: { $0.isWhitespace || $0.isNewline })
                 chapters.append(Chapter(mode: .normal, number: num, title: title, content: content))
             } else { i += 1 }
         }
@@ -208,7 +208,7 @@ struct BookDocument: FileDocument {
                 bodyLines.append(lines[i])
                 i += 1
             }
-            let content = bodyLines.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
+            let content = bodyLines.joined(separator: "\n").trimmingSuffix(while: { $0.isWhitespace || $0.isNewline })
             chapters.append(Chapter(mode: mode, number: num, title: title, content: content))
 
             // skip trailing ------
@@ -254,5 +254,14 @@ struct BookDocument: FileDocument {
     }
     private static func isNewSep(_ line: String) -> Bool {
         line.trimmingCharacters(in: .whitespaces) == newSectionSep
+    }
+}
+
+// MARK: - String 扩展：仅移除尾部空白（保护开头缩进）
+
+extension String {
+    func trimmingSuffix(while predicate: (Character) -> Bool) -> String {
+        guard let idx = lastIndex(where: { !predicate($0) }) else { return "" }
+        return String(self[...idx])
     }
 }

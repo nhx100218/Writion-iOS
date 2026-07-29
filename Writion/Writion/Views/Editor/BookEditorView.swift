@@ -16,6 +16,7 @@ struct BookEditorView: View {
 
     @State private var isShowingBookInfoOnStart = false
     @State private var isShowingPublish = false
+    @State private var isShowingExportPDF = false
     @State private var isShowingRenameAlert = false
     @State private var isShowingChangeAuthorAlert = false
     @State private var isShowingChapterRenameAlert = false
@@ -136,6 +137,12 @@ struct BookEditorView: View {
                 contentType: UTType.writonEpub,
                 defaultFilename: "\(document.bookData.bookName).epub"
             ) { _ in }
+            .fileExporter(
+                isPresented: $isShowingExportPDF,
+                document: PDFExportDocument(bookData: document.bookData),
+                contentType: .pdf,
+                defaultFilename: "\(document.bookData.bookName).pdf"
+            ) { _ in }
     }
 
     // MARK: - 布局
@@ -198,7 +205,9 @@ struct BookEditorView: View {
             Button { tempAuthor = document.bookData.author; isShowingChangeAuthorAlert = true }
                 label: { Label("修改作者", systemImage: "person") }
             Button { isShowingPublish = true }
-                label: { Label("发布为 EPUB", systemImage: "book") }
+                label: { Label("导出为 EPUB", systemImage: "book") }
+            Button { isShowingExportPDF = true }
+                label: { Label("导出为 PDF", systemImage: "doc.richtext") }
         }
         ToolbarItem(placement: .navigationBarTrailing) {
             EditButton()
@@ -213,7 +222,9 @@ struct BookEditorView: View {
             Button { tempAuthor = document.bookData.author; isShowingChangeAuthorAlert = true }
                 label: { Label("修改作者", systemImage: "person") }
             Button { isShowingPublish = true }
-                label: { Label("发布为 EPUB", systemImage: "book") }
+                label: { Label("导出为 EPUB", systemImage: "book") }
+            Button { isShowingExportPDF = true }
+                label: { Label("导出为 PDF", systemImage: "doc.richtext") }
         }
     }
 
@@ -329,14 +340,17 @@ private struct NewChapterSheet: View {
             }
             .navigationTitle("新建章节").navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) { Button("取消") { onCreate() } }
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
                         if title.trimmingCharacters(in: .whitespaces).isEmpty {
                             title = mode == .special ? String(localized: "间章") + " \(mode)" : String(localized: "新章节")
                         }
                         onCreate()
-                    } label: { Image(systemName: "checkmark").fontWeight(.semibold) }
+                    } label: {
+                        Image(systemName: "checkmark")
+                            .fontWeight(.semibold)
+                            .symbolRenderingMode(.hierarchical)
+                    }
                 }
             }
         }
