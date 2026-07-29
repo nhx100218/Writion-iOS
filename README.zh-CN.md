@@ -65,6 +65,23 @@
 3. 选择 **Writion** scheme
 4. 构建并运行（`⌘R`）
 
+### 侧载（Sideload）准备
+1. **AltStore/SideStore**（首选）：需定期重签名，首次设置需电脑/Wi-Fi；不支持「分发证书签名服务」，仅兼容「开发证书」
+2. **NB 助手**（替代）：需定期重签名，首次设置需电脑/Wi-Fi；支持「分发证书签名服务」，有广告。[官方链接](https://nbtool8.com)
+> ⚠️ 安全提示：仅从官方/可信来源下载侧载工具及 IPA；非官方软件导致的设备问题，本人不承担责任；越狱设备虽支持永久签名，但不建议越狱日常设备。
+
+
+### 📥 安装步骤
+#### 1. 每日构建（AltStore/SideStore/NB 助手 渠道）
+1. 前往 [GitHub Actions 标签页](https://github.com/nhx100218/Writion-iOS/actions) 下载 IPA 安装包
+2. (正常的安装步骤)
+
+#### 2. 正式版（AltStore/SideStore/NB 助手 渠道）
+1. 前往 [GitHub Releases 标签页](https://github.com/nhx100218/Writion-iOS/releases/) 下载 IPA 安装包
+2. (正常的安装步骤)
+
+> ⚠️ 注意：每日构建可能不稳定，请优先选择最新构建，若无法安装/运行游戏失败，再选择更早构建运行，构建失败的action不要下载。
+
 
 ## 📦 技术架构
 
@@ -78,7 +95,7 @@
 | 侧边栏编辑器 | `NavigationSplitView`（iPad）/ `NavigationStack`（iPhone） |
 | EPUB 导出 | 内置 ZIP 写入器 + Markdown→HTML 转换器 |
 | 缩略图 | `UIDocumentProperties` UIKit 桥接 |
-| 多语言 | `Localizable.xcstrings`（6 语言，75+ 键值） |
+| 多语言 | `Localizable.xcstrings`（9 语言，75+ 键值） |
 
 
 ## 🙏 致谢

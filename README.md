@@ -65,6 +65,23 @@ A native SwiftUI document-based book writing app for iOS/iPadOS, designed for au
 3. Select **Writion** scheme
 4. Build and run (`⌘R`)
 
+### Sideload Preparation
+Prioritize tools that support "permanent signing + automatic JIT", recommended by priority:
+1. **AltStore/SideStore** (Preferred): Requires periodic re-signing, initial setup requires computer/Wi-Fi; does not support "distribution certificate signing service", only compatible with "development certificate" 
+2. **NB Tool** (Alternative): Requires periodic re-signing, initial setup requires computer/Wi-Fi; support "distribution certificate signing service"; but have **ads**
+
+> ⚠️ Security Tip: Only download sideloading tools and IPA from official/trusted sources; I am not responsible for device issues caused by unofficial software; Jailbroken devices support permanent signing, but daily jailbreaking is not recommended.
+
+### Installation Steps
+#### 1. Daily Build (AltStore/SideStore/NB Tool Channel)
+1. Go to [GitHub Actions page](https://github.com/nhx100218/Writion-iOS/actions) to download the IPA installation package
+2. (Normal installation steps)
+
+#### 2. Release Build (AltStore/SideStore/NB Tool Channel)
+1. Go to [GitHub Releases page](https://github.com/nhx100218/Writion-iOS/releases/) to download the IPA installation package
+2. (Normal installation steps)
+
+> ⚠️ Note: The daily build may be unstable. Please give priority to the latest build. If you can't install/run the game and fail, choose to build and run earlier. Don't download the failed action.
 
 ## 📦 Technical Architecture
 
@@ -78,7 +95,7 @@ A native SwiftUI document-based book writing app for iOS/iPadOS, designed for au
 | Sidebar Editor | `NavigationSplitView` (iPad) / `NavigationStack` (iPhone) |
 | EPUB Export | Built-in ZIP writer + Markdown→HTML converter |
 | Thumbnail View | `UIDocumentProperties` UIKit bridge |
-| i18n | `Localizable.xcstrings` (6 languages, 75+ keys) |
+| i18n | `Localizable.xcstrings` (9 languages, 75+ keys) |
 
 
 ## 🙏 Acknowledgement
