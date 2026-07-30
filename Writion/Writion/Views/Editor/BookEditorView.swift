@@ -17,6 +17,9 @@ struct BookEditorView: View {
     @State private var isShowingBookInfoOnStart = false
     @State private var isShowingPublish = false
     @State private var isShowingExportPDF = false
+    @State private var isShowingExportTXT = false
+    @State private var isShowingExportImage = false
+    @State private var isShowingPrint = false
     @State private var isShowingRenameAlert = false
     @State private var isShowingChangeAuthorAlert = false
     @State private var isShowingChapterRenameAlert = false
@@ -143,6 +146,21 @@ struct BookEditorView: View {
                 contentType: .pdf,
                 defaultFilename: "\(document.bookData.bookName).pdf"
             ) { _ in }
+            .fileExporter(
+                isPresented: $isShowingExportTXT,
+                document: TXTExportDocument(bookData: document.bookData),
+                contentType: .plainText,
+                defaultFilename: "\(document.bookData.bookName).txt"
+            ) { _ in }
+            .fileExporter(
+                isPresented: $isShowingExportImage,
+                document: ImageExportDocument(bookData: document.bookData),
+                contentType: .png,
+                defaultFilename: "\(document.bookData.bookName).png"
+            ) { _ in }
+            // Print: uses UIActivityViewController via background representable
+            .background(PrintTrigger(isPresented: $isShowingPrint, bookData: document.bookData, bookName: document.bookData.bookName)
+                .frame(width: 0, height: 0))
     }
 
     // MARK: - 布局
@@ -204,10 +222,16 @@ struct BookEditorView: View {
                 label: { Label("重命名", systemImage: "pencil") }
             Button { tempAuthor = document.bookData.author; isShowingChangeAuthorAlert = true }
                 label: { Label("修改作者", systemImage: "person") }
-            Button { isShowingPublish = true }
-                label: { Label("导出为 EPUB", systemImage: "book") }
-            Button { isShowingExportPDF = true }
-                label: { Label("导出为 PDF", systemImage: "doc.richtext") }
+            Divider()
+            // 导出子菜单
+            Menu {
+                Button { isShowingPublish = true } label: { Text("EPUB") }
+                Button { isShowingExportPDF = true } label: { Text("PDF") }
+                Button { isShowingExportTXT = true } label: { Text("纯文本") }
+                Button { isShowingExportImage = true } label: { Text("图像") }
+            } label: { Label("导出", systemImage: "square.and.arrow.up.on.square") }
+            // 打印
+            Button { isShowingPrint = true } label: { Label("打印", systemImage: "printer") }
         }
         ToolbarItem(placement: .navigationBarTrailing) {
             EditButton()
@@ -221,10 +245,14 @@ struct BookEditorView: View {
                 label: { Label("重命名", systemImage: "pencil") }
             Button { tempAuthor = document.bookData.author; isShowingChangeAuthorAlert = true }
                 label: { Label("修改作者", systemImage: "person") }
-            Button { isShowingPublish = true }
-                label: { Label("导出为 EPUB", systemImage: "book") }
-            Button { isShowingExportPDF = true }
-                label: { Label("导出为 PDF", systemImage: "doc.richtext") }
+            Divider()
+            Menu {
+                Button { isShowingPublish = true } label: { Text("EPUB") }
+                Button { isShowingExportPDF = true } label: { Text("PDF") }
+                Button { isShowingExportTXT = true } label: { Text("纯文本") }
+                Button { isShowingExportImage = true } label: { Text("图像") }
+            } label: { Label("导出", systemImage: "square.and.arrow.up.on.square") }
+            Button { isShowingPrint = true } label: { Label("打印", systemImage: "printer") }
         }
     }
 
